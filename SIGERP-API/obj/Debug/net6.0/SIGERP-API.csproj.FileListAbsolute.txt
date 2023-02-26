@@ -571,3 +571,8 @@ D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\refint\SIGERP-
 D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\SIGERP-API.pdb
 D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\SIGERP-API.genruntimeconfig.cache
 D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\ref\SIGERP-API.dll
+D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\staticwebassets\msbuild.SIGERP-API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\staticwebassets\msbuild.build.SIGERP-API.props
+D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SIGERP-API.props
+D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SIGERP-API.props
+D:\Projects\ProjectsDotNet\SIGERP-API\SIGERP-API\obj\Debug\net6.0\staticwebassets.pack.json

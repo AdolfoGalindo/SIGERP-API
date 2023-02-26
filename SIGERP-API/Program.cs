@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options => {
     options.UseSqlServer("Server=DESKTOP-FV37MM9\\SQLEXPRESS;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
+    //options.UseSqlServer("Server=localhost;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
     });
 
 builder.Services.AddScoped<ICultivoRepository, CultivoRepository>();

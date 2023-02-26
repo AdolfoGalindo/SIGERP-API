@@ -13,11 +13,11 @@ namespace SIGERP_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CultivoController : ControllerBase
+    public class CultivoController
     {
-        private CultivoRepository cultivoRepository;
+        private ICultivoRepository cultivoRepository;
 
-        public CultivoController(CultivoRepository cultivoRepository)
+        public CultivoController(ICultivoRepository cultivoRepository)
         {
             this.cultivoRepository = cultivoRepository;
         }
