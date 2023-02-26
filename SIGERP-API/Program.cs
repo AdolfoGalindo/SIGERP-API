@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SIGERP_API.Context;
+using SIGERP_API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => {
     options.UseSqlServer("Server=DESKTOP-FV37MM9\\SQLEXPRESS;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
     });
+
+builder.Services.AddScoped<ICultivoRepository, CultivoRepository>();
 
 var app = builder.Build();
 

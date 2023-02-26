@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SIGERP_API.Context;
 using SIGERP_API.Models;
+using SIGERP_API.Repositories;
 
 namespace SIGERP_API.Controllers
 {
@@ -14,20 +15,20 @@ namespace SIGERP_API.Controllers
     [ApiController]
     public class CultivoController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private CultivoRepository cultivoRepository;
 
-        public CultivoController(AppDbContext context)
+        public CultivoController(CultivoRepository cultivoRepository)
         {
-            _context = context;
+            this.cultivoRepository = cultivoRepository;
         }
 
         // GET: api/Cultivo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cultivo>>> GetCultivos()
+        public async Task<IEnumerable<Cultivo>> GetCultivos()
         {
-            return await _context.Cultivos.ToListAsync();
+            return await cultivoRepository.GetAllAsync();
         }
-
+        /*
         // GET: api/Cultivo/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Cultivo>> GetCultivo(int id)
@@ -118,5 +119,6 @@ namespace SIGERP_API.Controllers
         {
             return _context.Cultivos.Any(e => e.CultId == id);
         }
+        */
     }
 }
