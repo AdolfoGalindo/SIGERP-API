@@ -39,8 +39,8 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-FV37MM9\\SQLEXPRESS;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
-        //=> optionsBuilder.UseSqlServer("Server=localhost;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
+        //=> optionsBuilder.UseSqlServer("Server=DESKTOP-FV37MM9\\SQLEXPRESS;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
+        => optionsBuilder.UseSqlServer("Server=localhost;Database=SigerpSAPPrd;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

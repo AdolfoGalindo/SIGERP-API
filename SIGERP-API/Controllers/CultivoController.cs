@@ -28,93 +28,97 @@ namespace SIGERP_API.Controllers
         {
             return await cultivoRepository.GetAllAsync();
         }
-        /*
+        
         // GET: api/Cultivo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cultivo>> GetCultivo(int id)
+        public async Task<Cultivo> GetCultivo(int id)
         {
-            var cultivo = await _context.Cultivos.FindAsync(id);
+            var cultivo = await cultivoRepository.GetByIdAsync(id);
 
-            if (cultivo == null)
-            {
-                return NotFound();
-            }
-
+            //if (cultivo == null)
+            //{
+            //    return new NotFoundResult($"No se encontro el cultivo con el {id}.");
+            //}
             return cultivo;
         }
-
+        
         // PUT: api/Cultivo/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCultivo(int id, Cultivo cultivo)
+        public async Task PutCultivo(int id, Cultivo cultivo)
         {
-            if (id != cultivo.CultId)
-            {
-                return BadRequest();
-            }
+            //if (id != cultivo.CultId)
+            //{
+            //    return BadRequest();
+            //}
 
-            _context.Entry(cultivo).State = EntityState.Modified;
+            //_context.Entry(cultivo).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CultivoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            //try
+            //{
+            //    await _context.SaveChangesAsync();
+            //}
+            //catch (DbUpdateConcurrencyException)
+            //{
+            //    if (!CultivoExists(id))
+            //    {
+            //        return NotFound();
+            //    }
+            //    else
+            //    {
+            //        throw;
+            //    }
+            //}
 
-            return NoContent();
+            //return NoContent();
+            await cultivoRepository.UpdateAsync(id, cultivo);
         }
-
+        
         // POST: api/Cultivo
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Cultivo>> PostCultivo(Cultivo cultivo)
+        public async Task<Cultivo> PostCultivo(Cultivo cultivo)
         {
-            _context.Cultivos.Add(cultivo);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CultivoExists(cultivo.CultId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            //_context.Cultivos.Add(cultivo);
+            //try
+            //{
+            //    await _context.SaveChangesAsync();
+            //}
+            //catch (DbUpdateException)
+            //{
+            //    if (CultivoExists(cultivo.CultId))
+            //    {
+            //        return Conflict();
+            //    }
+            //    else
+            //    {
+            //        throw;
+            //    }
+            //}
 
-            return CreatedAtAction("GetCultivo", new { id = cultivo.CultId }, cultivo);
+            //return CreatedAtAction("GetCultivo", new { id = cultivo.CultId }, cultivo);
+
+            return await cultivoRepository.AddAsync(cultivo);
         }
-
+        
         // DELETE: api/Cultivo/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCultivo(int id)
+        public Task DeleteCultivo(int id)
         {
-            var cultivo = await _context.Cultivos.FindAsync(id);
-            if (cultivo == null)
-            {
-                return NotFound();
-            }
+            //var cultivo = await _context.Cultivos.FindAsync(id);
+            //if (cultivo == null)
+            //{
+            //    return NotFound();
+            //}
 
-            _context.Cultivos.Remove(cultivo);
-            await _context.SaveChangesAsync();
+            //_context.Cultivos.Remove(cultivo);
+            //await _context.SaveChangesAsync();
 
-            return NoContent();
+            //return NoContent();
+
+            return cultivoRepository.DeleteAsync(id);
         }
-
+        /*
         private bool CultivoExists(int id)
         {
             return _context.Cultivos.Any(e => e.CultId == id);

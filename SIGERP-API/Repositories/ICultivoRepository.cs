@@ -7,7 +7,8 @@ namespace SIGERP_API.Repositories
         Task<List<Cultivo>> GetAllAsync();
         Task<Cultivo> GetByIdAsync(int id);
         Task<Cultivo> AddAsync(Cultivo newCultivo);
-        Task UpdateAsync(Cultivo cultivo);
-        Task DeleteAsync(Cultivo cultivo);
+        Task UpdateAsync(int id, Cultivo cultivo);
+        Task DeleteAsync(int id);
+
     }
 }
