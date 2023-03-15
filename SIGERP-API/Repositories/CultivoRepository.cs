@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NuGet.Packaging;
 using SIGERP_API.Context;
 using SIGERP_API.Models;
 
@@ -34,15 +33,8 @@ namespace SIGERP_API.Repositories
 
         public async Task<List<Cultivo>> GetAllAsync()
         {
-            //var lista = await _context.CultivoVariedads.ToListAsync();
-            //var lista_cultivos = await _context.Cultivos.ToListAsync();
-
-            //foreach (var cultivo in lista_cultivos)
-            //{
-            //    cultivo.CultivoVariedads.AddRange(lista.Where(f => f.CultId == cultivo.CultId));
-            //}
-
-            return await _context.Cultivos.ToListAsync();
+            return await _context.Cultivos.Include(f => f.CultivoVariedads).ToListAsync();
+            //return await _context.Cultivos.ToListAsync();
         }
 
         public async Task<Cultivo> GetByIdAsync(int id)

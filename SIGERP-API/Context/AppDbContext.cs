@@ -172,6 +172,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.UsrSistema)
                 .HasMaxLength(20)
                 .IsUnicode(false);
+
+            //entity.HasMany(d => d.CultivoVariedads).WithOne(p => p.Cult)
+            //    .HasForeignKey(d => d.CultId);
         });
 
         modelBuilder.Entity<CultivoSembrado>(entity =>
